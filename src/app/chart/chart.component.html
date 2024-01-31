@@ -1,0 +1,18 @@
+<div class="container-fluid py-2">
+    <button class="btn btn-sm btn-secondary" type="button" (click)="getBarChartData()">Get Data</button>
+    <hr>
+    <kendo-chart>
+        <kendo-chart-title text="Sample Bar Chart"></kendo-chart-title>
+        <kendo-chart-category-axis>
+            <kendo-chart-category-axis-item [categories]="barChartObject.categories">
+            </kendo-chart-category-axis-item>
+        </kendo-chart-category-axis>
+        <kendo-chart-series>
+            <kendo-chart-area background="white" [opacity]="1" [height]="400">
+                <kendo-chart-series-item *ngFor="let data of barChartObject.dataList" type="bar" [gap]="2"
+                    [spacing]="0.5" [data]="data">
+                </kendo-chart-series-item>
+            </kendo-chart-area>
+        </kendo-chart-series>
+    </kendo-chart>
+</div>
